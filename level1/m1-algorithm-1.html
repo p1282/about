@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 NYPC 예선 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>최댓값(S)</h1>
+        <p>9개의 서로 다른 자연수가 입력될 때, 이들 중 최댓값을 찾고 그 값이 몇 번째 수인지를 구하는 프로그램을 작성하시오. ​예를 들어 서로다른 9개의 수가 각각 3 29 38 12 57 74 40 85 61 이라면, 이 중 최댓값은 85 이고, 이 값은 8번째 수이다.</p>
+        <p></p>
+        <p>입력 예) 3 29 38 12 57 74 40 85 61 </p>
+        <p></p>
+        <p>출력 예) 85 8 </p>
+        <p></p>
+        <p>풀이 예) A = list(map(int,input().split()))
+                          n = len(A)
+                          maxv = 0
+                          maxi = -1
+                          for i in range(n):
+                              if A[i] > maxv:
+                                  maxv = A[i]
+                                  maxi = i
+                          print(maxv, maxi </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
