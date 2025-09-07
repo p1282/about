@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>linear structure search</h1>
+        <p>
+오름차순으로 정렬되어 숫자가 입력된다. <br>
+여기에서 찾고자 하는 숫자가 입력되면, 해당 숫자의 위치를 알려준다. <br>
+만약 입력된 숫자가 없다면 -1을 출력한다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+정렬된 숫자 배열과, 찾고자 하는 숫자
+1 2 3 5 7 9 11 15
+11
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+7
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+k = int(input())
+n = len(A)
+ans = -1
+for i in range(n):
+    if A[i]==k:
+        ans = i+1
+print(ans)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
