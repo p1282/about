@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>두더지 굴(S)</h1>
+        <p>
+땅속의 굴이 모두 연결되어 있으면, 이 굴은 한마리 두더지가 사는 집이다.<br>
+정올이는 뒷 산에 두더지가 몇 마리인지 궁금해졌다. <br>
+정올이는 특수 장비로 뒷산의 굴 모양 지도를 만들었다. 지도는 정사각형이고 0또는 1로 표현한다. <br>
+0은 땅이고 1은 굴이다.1이 상하좌우를 연결되어 있으면 한마리 두더지가 사는 집의 일부임을 알 수 있다.<br>
+지도를 보고 두더지가 몇마리 인지 출력하고, 각 두더지 집의 크기도 내림차순으로 출력한다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+지도의 크기가 입력된다. 그 아래 지도 크기 만큼 0과 1수열이 입력된다.<br>
+        <pre>
+7
+0110100
+0110101
+1110101
+0000111
+0100000
+0111110
+0111000
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>
+3
+9 8 7
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+A = []
+for i in range(n):
+    a = list(map(int,input()))
+    A.append(a)
+y = [0,0,-1,1]
+x = [-1,1,0,0]
+
+def isValid(y,x):
+    return 0 <= y < n and 0 <= x < n
+
+def fun(row, col):
+    global size
+    for i in range(4):
+        nrow = row + y[i]
+        ncol = col + x[i]
+        if isValid(nrow, ncol) and A[nrow][ncol]==1:
+            A[nrow][ncol]=2
+            size += 1
+            fun(nrow, ncol)
+cnt =0
+size =0
+
+for i in range(n):
+    for j in range(n):
+        if A[i][j] == 1:
+            cnt += 1
+            A[i][j]=2
+            size = 1
+            fun(i,j,size)
+            B.append(size)
+print(cnt, B)        
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
