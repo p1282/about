@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>소수판별</h1>
+        <p>
+소수는 1과 자신으로만 나누어떨어지는 수이다. 숫자를 입력하면 소수인지 알려주시오.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+숫자하나 입력된다
+3
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+소수이면 "소수" 아니면 "합성수" 라고 출력한다
+소수
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n =  int(input())
+cnt = 0
+for i in range(1,n+1,1):
+    if n % i == 0:
+        cnt += 1
+if cnt == 2:
+    print("소수")
+else:
+    print("합성수")
+          
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
