@@ -1,1 +1,48 @@
-1
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>글자 부분출력</h1>
+        <p>
+숫자만큼 단어가 입력된다. 각 단어의 첫번째 글자와 마지막 글자를 출력하시오
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+숫자하나, 단어가 숫자만큼 입력된다
+3
+바나나
+안녕하세요
+여름바다
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+단어별로 첫번째 글자와 마지막 글자만 출력한다
+바나
+안요
+여다
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n =  int(input())
+A = []
+for i in range(n):
+    s = input()
+    t = s[0]+s[-1]
+    A.append(t)
+print(A)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
