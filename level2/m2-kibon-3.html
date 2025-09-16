@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>합격 불합격</h1>
+        <p>
+시험을 치른 학생들에게 합격, 불합격 정보를 알려줍니다. (75 점 이상 합격)
+첫줄에 시험을 치른 학생수가 입력되고, 그 다음 학생들의 점수가 차례로 입력되면, 합격,불합격을 말해줍니다
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+학생수, 각 학생들의 성적
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+모든 학생들의 합격, 불합격 여부를 마지막에 출력         
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n =  int(input())
+A = []
+for i in range(n):
+    score = int(input())
+    if score >= 75:
+        A.append('합격')
+    else:
+        A.append('불합격')
+print(A)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
