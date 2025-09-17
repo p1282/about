@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>산그리기</h1>
+        <p>
+입력한 값만큼의 높이를 지닌 산 그리기
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+3
+-------
+5
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>    
+*
+**
+***
+**
+*
+-------
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+for i in range(1,n+1):
+    print('*' * i)
+for i in range(n-1,0,-1):
+    print('*' * i)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
