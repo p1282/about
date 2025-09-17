@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>10분 후</h1>
+        <p>
+버튼을 누르면 자동으로 10분 뒤에 알람이 울리는 시계가 있습니다.
+버튼을 누른 시간을 입력하면 언제 알람이 울리는지 계산하는 프로그램을 만드세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+시간 H와 분 M이 공백을 사이에 두고 차례로 입력된다.
+H는 0보다 크거나 같고 24보다 작은 자연수 이다.
+M은 0보다 크거나 같고 60보다 작은 자연수 이다.
+3 55
+-------
+4 10
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>    
+입력한 값에서 +10분 계산된 시간이 시간, 분 순서로 공백을 사이에 두고 출력된다.
+4 5
+-------
+4 20
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+h, m = map(int, input().split())
+
+m = m + 10
+h = h + m // 60
+m = m % 60
+print(h,m)          
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
