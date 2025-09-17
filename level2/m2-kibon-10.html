@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>10분 전</h1>
+        <p>
+입력한 값에서 -10 분 계산된 시간이 시간, 분 순서로 공백을 사이에 두고 출력된다
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+시간과 분이 다음줄로 차례로 입력된다
+12
+30
+-------
+0
+5
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>    
+입력한 값에서 -10분 계산된 시간이 시간, 분 순서로 공백을 사이에 두고 출력된다.
+12 20
+-------
+23 55
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+h = int(input())
+m = int(input())
+
+m = m - 10
+if m < 0:
+    h = h - 1
+    if h < 0:
+        h = h + 24
+    m = m + 60
+
+print(h,m)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
