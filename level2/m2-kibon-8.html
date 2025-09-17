@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>일로 환산</h1>
+        <p>
+24시간은 1일, 49시간은 2일 1시간 입니다.
+이처럼 시간을 일로 바꾸어 계산하는 프로그램을 만드세요
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+시간이 H로 주어집니다.
+H는 1보다 크거나 같고 8760보다 작거나 같은 자연수 입니다.
+25
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>    
+시간이 일로 환산되어 일, 나머지는 시간 순서로 공백을 사이에 두고 출력됩니다.
+1 1
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+h = int(input())
+
+a = h // 24
+b = h % 24
+print(a, b)
+          
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
