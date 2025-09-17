@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>n-queen</h1>
+        <p>
+전산학에서 백트래킹 문제로 n-queen problem이 유명하다. 
+이 문제는 n*n체스 보드판에 n개의 queen을 서로 공격하지 못하도록 배치하는 방법을 찾아내는 문제이다.
+일단 이 문제를 풀기 위해서 퀸이 공격할 수 있는 위치에 대한 생각을 해야 한다. 일단
+퀸이 공격할 수 있는 루트는 다음과 같다. 
+(왼쪽, 오른쪽, 위쪽, 아래쪽, 대각선 4방향 으로 모두 8방향으로 공격 가능, 체스판의 마지막 칸까지 모두 공격 가능하다.)
+
+체스판 크기 및 queen의 수를 나타내는 n을 입력받아서 서로 공격하지 못하도록
+배치하는 총 방법의 수를 구하는 프로그램을 작성하시오.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+숫자 하나(2~9)
+4
+-------
+8
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>
+2
+-------
+92
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+Q = [0] * n
+
+def promising(k):
+    i = 0
+    while i < k:
+        if Q[i] == Q[k] or \
+           Q[i] - Q[k] == (i-k)  or \
+           Q[i] - Q[k] == (k-i):
+            return False
+        i += 1
+    return True
+
+ans = 0
+def nQueens(k):
+    global ans
+
+    if k == n:
+        ans += 1
+        return
+
+    i = 0
+    while i < n:
+        Q[k] = i
+        if promising(k):
+            nQueens(k+1)
+        i += 1
+
+nQueens(0)
+print(ans)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
