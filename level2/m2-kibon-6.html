@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>종이접기</h1>
+        <p>
+가로로 아주 긴 종이가 있습니다. 이 종이를 절반씩 접어가며 종이접기를 하려고 합니다.
+종이를 접을 때 마다 종이의 두께가 2배로 늘어납니다.
+이 종이를 몇 번 접으면 종이의 원래 가로 길이보다 두꺼워지는지 계산하는 프로그램을 만드세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+종이의 두께 N과 종이의 가로길이 M이 차례대로 주어집니다.
+N은 1보다 크고 1000보다 작은 자연수 입니다.
+M은 N보다 크고 10000보다 작은 자연수 입니다.
+2 1000
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>    
+몇 번 접으면 원래 가로 길이보다 두꺼워 지는지 그 횟수가 출력된다
+9
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+N,M = map(int,input().split())
+cnt = 0
+while True:
+    N = N * 2
+    cnt = cnt + 1
+    if N > M:
+        print(cnt)
+        break
+          
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
