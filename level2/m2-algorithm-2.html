@@ -48,6 +48,57 @@ n은 30 이하의 자연수 두 번째 줄부터 n줄에 걸쳐서 n개의 0과 
         <p>
         <pre>
 
+
+n= int(input())
+road=[]
+visited =[[False for i in range(n)]for j in range(n)]
+
+for i in range(n):
+    a= list(map(int,input().split()))
+    road.append(a)
+
+cnt = 1
+
+def isValid(row, col):
+    if row < 0 or row >n-1 or col<0 or col>n-1:
+        return False
+    else:
+        return True
+
+dx = [-1,1,0,0]
+dy = [0,0,-1,1]
+
+def fun(row, col, cnt):
+    if not isValid(row, col):
+        return
+    if visited[row][col]:
+        return
+    if road[row][col] != 1:
+        return
+
+
+    visited[row][col] = True
+    road[row][col] = cnt
+    for i in range(4):
+        nrow = row + dy[i]
+        ncol = col + dx[i]
+        fun(nrow, ncol, cnt)
+   
+   
+
+for i in range(n):
+    for j in range(n):
+        if road[i][j] == 1:
+            cnt = cnt + 1
+            fun(i, j, cnt)
+
+
+for i in range(n):
+    for j in range(n):
+        print(road[i][j], end=' ')
+    print()
+
+print(cnt-1)
         </pre>
         </p>
         <p></p>
