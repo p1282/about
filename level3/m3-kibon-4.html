@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>세로로 읽기</h1>
+        <pre>
+KCNV
+DCHD
+AKDQ
+DKFW위와같이 4 x 4 크기의 사각형 모양으로 영문 대문자가 늘어서 있습니다. 
+이 때 왼쪽 위 문자부터 차례대로 세로로 읽어 한 줄로 나열하는 프로그램을 만드세요.
+        </pre>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+        <pre>
+영문 대문자 4개 문자열이 주어집니다<br>
+KCNV
+DCHD
+AKDQ
+DKFW
+        </pre>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>
+영문 대문자 16자 문자열 출력됩니다.
+KDADCCKKNHDFVDQW
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+S = []
+for i in range(4):
+    s = input()
+    S.append(s)
+for i in range(4):
+    for j in range(4):
+        t = S[j][i]
+        print(t, end='')
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
