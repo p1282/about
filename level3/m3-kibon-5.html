@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>단어 총개수</h1>
+        <p>
+영어 단어들이 하나 이상의 공백을 사이에 두고 늘어서 있습니다. 
+이 때 영어 단어들이 총 몇 개가 있는지 계산해서 출력하는 프로그램을 만드세요.
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+영문 소문자로 이루어진 단어들이 하나 이상의 공백을 사이에 두고 
+문자열 한 줄에 이어서 주어집니다. 
+단어는 최소 1개 이상이며 문자열 가장 앞에는 공백이 들어올 수 없습니다. <br>
+apple banana orange
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+단어의 총 개수가 출력됩니다.<br>
+3
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+S = list(input().split())
+n = len(S)
+cnt = 0
+space = False
+for i in range(n):
+    if S[i] == ' ':
+        if  space == False:
+            cnt += 1
+            space = True
+        else:
+            continue
+    else:
+        space = False
+        
+print(cnt + 1)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
