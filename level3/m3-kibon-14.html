@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>자동차5부제</h1>
+        <p>
+다음과 같은 규칙으로 차가 드나드는 것을 제한하고자 합니다. <br>
+(1) 월요일 : 자동차 번호 끝자리가 1 또는 6 이면 차가 들어올 수 없습니다<br>
+(2) 화요일 : 자동차 번호 끝자리가 2 또는 7 이면 차가 들어올 수 없습니다<br>
+(3) 수요일 : 자동차 번호 끝자리가 3 또는 8 이면 차가 들어올 수 없습니다<br>
+(4) 목요일 : 자동차 번호 끝자리가 4 또는 9 이면 차가 들어올 수 없습니다<br>
+(5) 금요일 : 자동차 번호 끝자리가 5 또는 0 이면 차가 들어올 수 없습니다<br>
+요일과 5개의 자동차 번호가 입력되면 어떤 자동차가 들어올 수 없는지 
+판별하는 프로그램을 작성하세요.
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+첫째줄에 요일이 주어집니다. 
+다음 줄에 5개의 자동차 번호가 공백을 사이에 두고 입력됩니다.<br>
+수요일<br>
+1123 3421 8732 7628 0022
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+해당 요일에 들어올 수 없는 자동차 번호를 출력합니다.<br>
+1123 7628<br>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+d = input()
+A = list(map(int, input().split()))
+
+ans = []
+for i in range(len(A)):
+    t = A[i] % 10
+    if d == '월요일':
+        if t == 1 or t == 6:
+            ans.append(A[i])
+    elif d == '화요일':
+        if t == 2 or t == 7:
+            ans.append(A[i])
+    elif d == '수요일':
+        if t == 3 or t == 8:
+            ans.append(A[i])
+    elif d == '목요일':
+        if t == 4 or t == 9:
+            ans.append(A[i])
+    elif d == '금요일':
+        if t == 5 or t == 0:
+            ans.append(A[i])
+print(ans)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
