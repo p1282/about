@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>최소공배수</h1>
+        <p>
+공배수란 둘 이상의 자연수에 대해 공통된 배수를 말합니다. 
+이 공배수 가운데 가장 작은 값을 최소공배수 라고 합니다. 
+두 수를 입력하면 최소공배수를 계산하는 프로그램을 작성하세요.
+
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+1보다 크고 1000보다 작은 자연수 2개가 주어집니다.<br>
+15 20<br>
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+두수의 최소공배수가 출력됩니다.<br>
+60<br>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+a,b = map(int, input().split())
+i = 1
+
+while True:
+    tmp = a * i
+    if tmp % b == 0:
+        ans = tmp
+        break
+    i = i + 1
+print(ans)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
