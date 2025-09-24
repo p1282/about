@@ -7,41 +7,41 @@
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <div class="timeline">
-        <h1>두더지 굴(L)</h1>
+        <h1>두색 칠하기</h1>
         <p>
-정올이는 땅속의 굴이 모두 연결되어 있으면 이 굴은 한 마리의 두더지가 사는 집이라는 사실을 발견하였다.
-정올이는 뒷산에 사는 두더지가 모두 몇 마리인지 궁금해졌다. 
-정올이는 특수 장비를 이용하여 뒷산의 두더지 굴을 모두 나타낸 지도를 만들 수 있었다. 
-이 지도는 직사각형이고 가로 세로 영역을 0또는 1로 표현한다. 
-0은 땅이고 1은 두더지 굴을 나타낸다. 1이 상하좌우로 연결되어 있으면 한 마리의 두더지가 사는집으로 정의할 수 있다.
-특수촬영 사진 데이터를 입력받아 두더지 굴의 수를 출력하고, 
-각 두더지 굴의 크기를 오름차순으로 정렬하여 출력하는 프로그램을 작성하시오.
+평면 위에 지도가 있을 때, 각 영역을 인접한 다른 영역과 구분할 수 있게 서로 다른 색으로 칠하고자 한다면, 
+네 가지 색만 있으면 된다는 4색 정리라는 것이 있다. 
+이 정리는 100년이 넘게 증명되지 않은 채로 남아 있다가 1976년에서야 컴퓨터의 도움을 받아서 증명될 수 있었다. 
+이 문제는 그래프의 정점을 칠하는 문제로 구조화하여 풀 수 있다. 
+어떤 연결 그래프가 주어졌을 때 그 그래프를 두 색으로 칠할 수 있는지, 
+즉 모든 정점을 빨간색 또는 검은색으로 칠할 때 인접한 정점이 같은 색으로 칠해지지 않게 할 수 있는지 알아보자. 
+문제를 단순하게 하기 위해 그래프가 연결 그래프이고 무방향 그래프이며 자체 루프가 없다고 가정하자. 
+0부터 n-1까지의 n개의 정점과 간선의 수 m이 입력될 때, 2가지 색깔로 칠할 수 있는지 결정하는 프로그램을 작성하시오.
         </p>
         <p></p>
         <h2>입력</h2> 
         <p>    
-        <pre>
-첫 번째 줄에 가로, 세로의 크기를 나타내는 n이 입력된다. 
-n은 30 이하의 자연수 두 번째 줄부터 n줄에 걸쳐서 n개의 0과 1이 공백으로 구분되어 입력된다.
-7
-0 1 1 0 1 0 0
-0 1 1 0 1 0 1
-1 1 1 0 1 0 1
-0 0 0 0 1 1 1
-0 1 0 0 0 0 0
-0 1 1 1 1 1 0
-0 1 1 1 0 0 0
-        </pre>
+첫째 줄에는 정점의 개수 n(1 ≤ n ≤ 200)과 간선의 수 m이 입력된다.
+둘째 줄부터 m줄에 걸쳐서 각 간선이 연결하는 정점의 번호가 공백으로 구분되어 입력된다.<br>
+<br>
+9<br>
+8<br>
+0 1<br>
+0 2<br>
+0 3<br>
+0 4<br>
+0 5<br>
+0 6<br>
+0 7<br>
+0 8<br>
+<br>
         </p>
         <p></p>
         <h2>출력</h2> 
         <p>    
-        <pre>
-3
-9
-8
-7
-        </pre>
+입력된 그래프가 두 색으로 칠할 수 있는 그래프인지를 판단하고 가능하면 ok 불가능하면 no 를 출력한다.<br>
+<br>
+ok
         </p>
         <p></p>
         <h2>풀이</h2> 
@@ -49,56 +49,48 @@ n은 30 이하의 자연수 두 번째 줄부터 n줄에 걸쳐서 n개의 0과 
         <pre>
 
 
-n= int(input())
-road=[]
-visited =[[False for i in range(n)]for j in range(n)]
+n,m = map(int, input().split())
 
+graph = [[0 for i in range(n)] for j in range(n)]
+for i in range(m):
+    a,b = map(int, input().split())
+    graph[a][b] = 1
+    graph[b][a] = 1
+
+visited =[False] * (n+1)
+
+fill = [-1] * n
+
+def fun(node, color):
+    visited[node]  = True
+    fill[node] = color
+
+    for nx in range(n):
+        if graph[node][nx] == 1 and \
+           fill[nx] == color:
+            fill[node] = -1
+            visited[node] = False
+            return
+
+    for nx in range(n):
+        if graph[node][nx] == 1 and \
+           not visited[nx]:
+            fun(nx, 1-color)
+           
+
+fun(0, 1)
+ok = True
 for i in range(n):
-    a= list(map(int,input().split()))
-    road.append(a)
-
-cnt = 1
-
-def isValid(row, col):
-    if row < 0 or row >n-1 or col<0 or col>n-1:
-        return False
-    else:
-        return True
-
-dx = [-1,1,0,0]
-dy = [0,0,-1,1]
-
-def fun(row, col, cnt):
-    if not isValid(row, col):
-        return
-    if visited[row][col]:
-        return
-    if road[row][col] != 1:
-        return
-
-
-    visited[row][col] = True
-    road[row][col] = cnt
-    for i in range(4):
-        nrow = row + dy[i]
-        ncol = col + dx[i]
-        fun(nrow, ncol, cnt)
+    if fill[i] == -1:
+        ok = False
+        break
+if ok:
+    print('OK')
    
-   
+else:
+    print('NO')
+    
 
-for i in range(n):
-    for j in range(n):
-        if road[i][j] == 1:
-            cnt = cnt + 1
-            fun(i, j, cnt)
-
-
-for i in range(n):
-    for j in range(n):
-        print(road[i][j], end=' ')
-    print()
-
-print(cnt-1)
         </pre>
         </p>
         <p></p>
