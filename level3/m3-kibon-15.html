@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>숫자모양</h1>
+        <p>
+다음과 같은 ㄹ 자 모양으로 숫자를 출력하는 프로그램을 작성하세요.<br>
+1 2 3<br>
+6 5 4<br>
+7 8 9<br>
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+출력의 크기가 자연수 n으로 주어집니다<br>
+2 < n < 1000<br>
+<br>
+3
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+가로 개수 n, 세로 개수 n 크기로 n * n 까지 순서대로 ㄹ 자 모양으로 출력합니다.<br>
+1 2 3<br>
+6 5 4<br>
+7 8 9<br>
+
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+i= 1
+turn = 1
+while i <= n*n:
+    if i % n == 1:
+        if turn == 1:
+            for j in range(i,i+n,1):
+                print(j,end=' ')
+            turn = 2
+        elif turn == 2:
+            for j in range(i+n-1,i-1,-1):
+                print(j,end=' ')
+            turn = 1
+
+    print()
+    i += n
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
