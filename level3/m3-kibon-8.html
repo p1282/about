@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>가장작은값</h1>
+        <p>
+서로 다른 수 n개의 숫자가 주어집니다. 
+이 때 가장 작은 값과 그 값의 위치를 출력하는 프로그램을 작성하세요.
+
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+첫 번째 입력으로 수를 몇 개 입력할지 개수 n이 주어집니다. 
+두 번째 입력부터 n개의 서로 다른 수 m이 차례대로 주어집니다. 
+n,m은 1보다 크고 1000보다 작은 자연수 입니다.<br>
+5<br>
+70<br>
+50<br>
+80<br>
+20<br>
+90<br>
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+n개의 수 가운데 가장 작은 값과 그 값이 몇 번째 위치하는지 차례대로 출력합니다<br>
+20 4
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+S = list(input())
+n = len(S)
+
+cnt = 0
+t =  0
+
+pre = S[0]
+for i in range(1,n):
+    if S[i].isdigit():
+        t = (t*10) + int(S[i]) 
+    else:
+        print(pre * t, ,end='')
+        pre = S[i]
+        t = 0
+print(pre * t)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
