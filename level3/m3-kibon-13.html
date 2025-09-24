@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>윤년 판별</h1>
+        <p>
+윤년이란 2월달이 28일까지 있습니다. 평연은 2월달이 29일까지 있습니다. 
+윤년은 다음과 같은 규칙에 따라 정해집니다. <br>
+(1) 4로 나누어 떨어지는 해는 윤년으로 합니다.(1988년, 1992년, 1996,,,2028년...) <bt>
+(2) 4, 100으로도 나누어 떨어지는 해는 평년으로 합니다.(1900년, 2100년, 2200년,...) <br>
+(3) 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 합니다.(2000녀, 2400년 ...)<br>
+연도가 입력되면 윤년인지 평년인지 판별하는 프로그램을 작성하세요.
+
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+년도가 주어집니다.<br>
+1520<br>
+
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+윤년이면 o, 평년이면 x를 출력합니다.<br>
+o<br>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+y = int(input())
+if y % == 4:
+    if y % 100 == 0:
+        if y % 400 == 0:
+            print('o')
+        else:
+            print('x')    
+    else:
+        print('o')	
+
+else:
+    print('x')
+        </pre>
+        </p>
+        <p></p>
+        <a href="m3.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
