@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>maximum sum</h1>
+        <p>
+n개의 원소로 이루어진 집합이 있다. 이 집합에서 최대로 가능한 부분합을 구하는 것이 문제이다. 
+부분합이란 n개의 원소 중 i번째 원소로부터 j번째 원소까지의 연속적인 합을 의미한다(단, 1 < i <= j <= n ). 
+만약 다음과 같이 6개의 원소로 이루어진 집합이 있다고 가정하자. <br>
+6 -7 3 -1 5 2<br><br>
+이 집합에서 만들어지는 부분합 중 최댓값은 3번째 원소부터 6번째 원소까지의 합인 9이다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+첫 줄에 원소의 수를 의미하는 정수 n이 입력되고, 둘째 줄에 n개의 정수가 공백으로 구분되어 입력된다. 
+(단, 2 <= n <= 100 , 각 원소의 크기는 -1000부터 1000 사이의 정수이다.) <br>
+6<br>
+6 -7 3 -1 5 2<br><br>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+9
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+n = int(input())
+A = list(map(int,input().split()))
+
+maxv = 0
+for i in range(n):
+    tot = 0
+    for j in range(i,n,1):
+        tot = tot + A[j]
+        if maxv < tot:
+            maxv = tot
+#-------------
+
+n = int(input())
+A = list(map(int,input().split()))
+
+tot = 0
+for i in range(n):
+    tot = A[i] + max(tot,0)
+print(tot)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
