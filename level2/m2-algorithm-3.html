@@ -37,6 +37,27 @@
         <p>
         <pre>
 
+m = int(input())
+n = int(input())
+coins =list(map(int,input().split()))
+
+coins.sort(reverse=True)
+
+def fun(mon):
+    global m
+    A = []
+    for i in range(n):
+        a = m // coins[i]
+        A.append(a)
+        m = m % coins[i]
+
+    print(A)
+
+
+fun(0)
+
+#----------------------
+
 
 m = 730
 n = 5
