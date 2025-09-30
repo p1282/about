@@ -53,48 +53,45 @@ no<br>
         <h2>풀이</h2> 
         <p>
         <pre>
+n =  int(input())
+m =  int(input())
 
 
-n,m = map(int, input().split())
-
-graph = [[0 for i in range(n)] for j in range(n)]
+A = [[0 for i in range(n)] for j in range(n)]
 for i in range(m):
     a,b = map(int, input().split())
-    graph[a][b] = 1
-    graph[b][a] = 1
-
-visited =[False] * (n+1)
-
+    A[a][b] = 1
+    A[b][a] = 1
+    
 fill = [-1] * n
 
 def fun(node, color):
-    visited[node]  = True
     fill[node] = color
 
     for nx in range(n):
-        if graph[node][nx] == 1 and \
+        if A[node][nx] == 1 and \
            fill[nx] == color:
             fill[node] = -1
-            visited[node] = False
             return
 
     for nx in range(n):
-        if graph[node][nx] == 1 and \
-           not visited[nx]:
-            fun(nx, 1-color)
-           
+        if A[node][nx] == 1 and \
+           fill[nx] == -1:
+            fun(nx,1-color)
 
-fun(0, 1)
-ok = True
+fun(0, 0)
+
+ok=True
 for i in range(n):
     if fill[i] == -1:
-        ok = False
+        ok=False
         break
+
 if ok:
-    print('OK')
-   
+    print('ok')
 else:
-    print('NO')
+    print('no')
+
     
 
         </pre>
