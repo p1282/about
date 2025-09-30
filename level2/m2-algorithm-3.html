@@ -57,11 +57,9 @@ def fun(mon):
 fun(0)
 
 #----------------------
-
-
-m = 730
-n = 5
-coins = [10,50,100,500,1250]
+m = int(input())
+n = int(input())
+coins =list(map(int,input().split()))
 minc = int(1e9)
 ans = []
 minans = []
