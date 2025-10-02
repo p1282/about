@@ -81,6 +81,36 @@ def fun(here, sumf):
 fun(1,0)
 visited[1] = True
 print(ans)
+            
+--------------
+            
+INF = int(1e9)
+n,m= map(int, input().split())
+A = [[0 for i in range(n+1)] for j in range(n+1)]
+
+for i in range(m):
+    a,b,c = map(int,input().split())
+    A[a][b] = c
+    A[b][a] = c
+
+visited = [False] * (n+1)
+
+def fun(here):
+    
+    if here == n:
+        return 0
+
+    ret = INF
+    for nx in range(n+1):
+        if A[here][nx] != 0 and \
+           not visited[nx]:
+            visited[nx] = True
+            ret = min(ret, A[here][nx] + fun(nx))
+            visited[nx] = False
+    return ret
+
+visited[1] = True
+print(fun(1))
 
         </pre>
         </p>
