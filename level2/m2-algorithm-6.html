@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>삼각화단 만들기</h1>
+        <p>
+주어진 화단 둘레의 길이를 이용하여 삼각형 모양의 화단을 만들려고 한다. 
+이 때 만들어진 삼각형 화단 둘레의 길이는 반드시 주어진 화단 둘레의 길이와 같아야 한다. 
+또한, 화단 둘레의 길이와 각 변의 길이는 자연수이다. 
+예를 들어, 만들고자 하는 화단 둘레의 길이가 9m라고 하면, <br><br>
+ • 한 변의 길이가 1m, 두 변의 길이가 4m인 화단<br>
+ • 한 변의 길이가 2m, 다른 변의 길이가 3m, 나머지 변의 길이가 4m인 화단<br>
+ • 세 변의 길이가 모두 3m인 3가지 경우의 화단을 만들수 있다.<br><br>
+화단 둘레의 길이를 입력받아서 만들 수 있는 서로 다른 화단의 수를 구하는 프로그램을 작성하시오.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+화단의 길이 n이 주어진다.(단, 1 <= n <= 100)<br><br>
+9<br>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+출력내용은 입력받은 n으로 만들 수 있는 서로 다른 화단의 수를 출력한다.<br><br>
+3
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+
+for i in range(1,n+1,1):
+    for j in range(i,n+1,1):
+        for k in range(j,n+1,1):
+            if i+j+k == n and i+j > k:
+                print(i,j,k)
+
+--------------
+
+n = int(input())
+
+for i in range(1,n+1,1):
+    for j in range(i,n+1,1):
+        k = n - (i+j)
+        if k>0 and k>=j and i+j > k:
+            print(i,j,k)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
