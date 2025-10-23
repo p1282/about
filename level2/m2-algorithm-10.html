@@ -98,6 +98,34 @@ fun(0,0,0)
 fun(1,0,0)
 print(ans)
 
+-------
+
+rol = list(input())
+t1 = list(input())
+t2 = list(input())
+m = len(t1)
+dol = []
+dol.append(t1)
+dol.append(t2)
+
+def fun(dolnum, dolpos, rolpos):
+    if rolpos >= len(rol):
+        return 1
+
+    ret = 0
+    st = dolpos
+    en = m
+    for i in range(st,en,1):
+        if dol[dolnum][i] == rol[rolpos]:
+            ret += fun(1-dolnum, i+1, rolpos+1)
+    return ret
+
+ans = 0
+ans += fun(0,0,0)
+ans += fun(1,0,0)
+print(ans)
+
+            
         </pre>
         <a href="m2.html">목록으로 돌아가기</a>
     </div>
