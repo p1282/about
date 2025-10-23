@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>이진암호화</h1>
+        <p>
+이진 압축이란 {0, 1}로 이루어진 길이가 2^k 인 문자열에 대해서, 
+모두 같은 문자가 될 때까지 크기가 2^(k-1)인 두 그룹으로 분할하여 
+모두 같은 문자가 되도록 하는 과정으로 암호화를 한다. 
+만약 주어진 원문이 길이가 4인 “0000”라면, 암호문은 “0”이다.
+만약 주어진 암호문이 길이가 4인 “1101”이라면 
+모든 문자가 같지 않기 때문에 “11 01”로 일단 한 번 분할하고 
+다시 뒷부분은 “01”로 같지 않으니 “11 0 1”로 분할한다. 
+즉 이로써 만들어진 암호문은 “-1-01”이 된다. 
+“-1-01” 의 의미는 <br><br>
+- : 먼저 전체를 분할하고<br>
+ 1 : 분할된 왼쪽 부분은 모두 1이고<br>
+ - : 오른쪽 분할은 다시 분할하며, <br>
+01 : 분할된 결과는 0과 1이라는 의미이다.<br>
+ 길이가 n인 원문을 입력받아서 암호문을 출력하는 프로그램을 작성하시오.
+        </p>
+        <h2>입력</h2> 
+        <p>    
+길이가 n인 0, 1로 구성된 암호문이 입력된다. 
+(단, 1 <= n <= 2^(18)) <br><br>
+0000<br>
+-------<br>
+1101<br>
+        </p>
+        <h2>출력</h2> 
+        <p>    
+위 원리로 만들어진 암호문을 출력한다.<br><br>
+0<br>
+-------<br>
+-1-01<br>
+
+        </p>
+        <h2>풀이</h2> 
+        <pre>
+
+
+A = list(map(int,input()))
+n = len(A)
+
+def fun(st, size):
+    if size == 1:
+        print(A[st],end='')
+        return
+    p = sum(A[st:st+size+1:1])
+   
+    if p == 0 or p == size:
+        print(A[st],end='')
+        return
+    print('-',end='')
+    fun(st, size//2)
+    fun(st+size//2, size//2)
+   
+
+fun(0,n)
+
+        </pre>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
