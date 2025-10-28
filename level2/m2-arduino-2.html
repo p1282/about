@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>초음파센서 HC-SR04</h1>
+        <p>
+초음파 센서가 다가오는 앞의 물체와의 거리를 계산한다. 
+만약 거리가 가까와 지면 LED불이 들어온다.
+만약 거리가 다시 멀어지면 LED불이 꺼진다. 
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+LED 는 8번 핀에 연결하고, 
+초음파센서는 출력센서는 2번핀에 입력센서는 5번핀에 연결한다.
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(5, INPUT);
+  pinMode(8, OUTPUT);
+}
+
+void checkdist() 
+{
+  digitalWrite(2,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(2,LOW);
+  int d = pulseIn(5,HIGH);
+  if (d < 200) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void loop()
+{
+  bool a = checkdist();
+  if (a == true) {
+    digitalWrite(8,HIGH);
+  } else {
+    digitalWrite(8,LOW);
+  }
+  delay(100);
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
