@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>초음파센서 + 서보모터</h1>
+        <p>
+앞에 물체가 다가오면 모터가 돌아가서 자동으로 문이 열리고, 
+앞에 물체가 멀어지면 모터가 돌아서 다시 문이 닫힌다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+초음파센서는 출력센서는 12번핀에 입력센서는 13번핀에 연결한다. 
+서보모터는 7번핀에 연결한다. 
+
+#include "Servo.h"
+Servo servo;
+
+void setup()
+{
+  pinMode(12, OUTPUT);
+  pinMode(13, INPUT);
+  servo.attach(7);
+}
+
+void checkdist() 
+{
+  digitalWrite(12,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(12,LOW);
+  int d = pulseIn(13,HIGH);
+  int dist = d/29/2;
+  return round(dist);	
+}
+
+void closing() 
+{
+  servo.write(0);
+}
+
+void opening() 
+{
+  servo.write(180);
+}
+
+void loop()
+{
+  int a = checkdist();
+  if (a < 15) {
+    closing();
+  } else {
+    opening();
+  }
+  delay(100);
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
