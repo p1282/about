@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>서보 Motor SG90</h1>
+        <p>
+입력값이 들어오면 모터가 움직이고 LED불이 들어온다.
+1번 숫자를 입력하면 모터를 180도 움직이면서 LED불이 들어오고, 
+2번 숫자를 입력하면 모터를 0도에 위치시키며 LED불이 꺼진다. 
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+LED 는 8번 핀에 연결하고, 서보모터는 7번 핀에 연결한다.
+
+#include <Servo.h>
+Servo servo;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(8, OUTPUT);
+  servo.attach(7);
+}
+
+void loop()
+{
+  if (Serial.available() > 0) {
+    char a = Serial.read();
+    Serial.println(a);
+    if (a == '1') {
+      digitalWrite(8,HIGH);
+      servo.write(180);
+    } else if (a == '2') {
+      digitalWrite(8,LOW);
+      servo.write(0);
+    }
+  }
+  delay(100);
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
