@@ -36,7 +36,17 @@
         <h2>풀이</h2> 
         <p>
         <pre>
+a,b,c,tot = map(int,input().split())
+D = [0] * (tot+max(a,b,c)+1)
 
+for i in range(0,len(D),a):
+    for j in range(i,len(D),b):
+        for k in range(j,len(D),c):
+            D[k] = 1
+
+print(D[tot])
+
+-------
 a,b,c,tot = map(int,input().split())
 
 D = [0] * (tot+max(a,b,c)+1)
