@@ -60,6 +60,23 @@ for i in range(len(A)):
             ans.append(A[i])
 print(ans)
 
+-------
+d = input()
+A = list(map(int, input().split()))
+n = len(A)
+
+pivot = {'월요일':[1,6], \
+         '화요일':[2,7], \
+         '수요일':[3,8], \
+         '목요일':[4,9], \
+         '금요일':[5,0]}
+         
+
+for i in range(n):
+    t = A[i] % 10
+    if t in pivot[d]:
+        print(A[i], end=' ')
+
         </pre>
         </p>
         <p></p>
