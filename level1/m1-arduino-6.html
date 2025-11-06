@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>버튼 + LED</h1>
+        <p>
+버튼을 누르면 불이켜지고 안 누르면 불이 꺼진다 <br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+버튼은 4번핀과 음극에 연결한다.
+LED 는 8번핀에 연결한다.
+
+void setup()
+{
+  pinMode(4, INPUT_PULLUP);
+  pinMode(8, OUTPUT);  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int a = digitalRead(4);
+  Serial.print("on off : ");
+  Serial.print(a);
+  if (a == 0) {
+  	Serial.println("push OK ");
+    digitalWrite(8,HIGH);
+  } else if (a == 1) {
+  	Serial.println("push NO");
+    digitalWrite(8,LOW);  
+  }
+  delay(1000); 
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
