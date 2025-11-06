@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>버튼</h1>
+        <p>
+버튼을 누르고 안 누르고에 따라 다른값이 출력된다 <br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+버튼은 4번핀과 음극에 연결한다.
+
+void setup()
+{
+  pinMode(4, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int a = digitalRead(4);
+  Serial.println(a);
+  delay(100);
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
