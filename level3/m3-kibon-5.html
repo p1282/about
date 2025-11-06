@@ -45,6 +45,19 @@ for i in range(n):
         space = False
         
 print(cnt + 1)
+-------
+S = input()
+n = len(S)
+cnt = 0
+
+for i in range(n):
+    if S[i] == ' ' and (i+1) <= (n-1) and \
+       S[i+1] != ' ':
+           cnt += 1
+
+print(cnt+1)
+
+
         </pre>
         </p>
         <p></p>
