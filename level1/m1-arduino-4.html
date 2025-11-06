@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>피에조 부저</h1>
+        <p>
+피에조 부저에서 소리가 난다. <br><br>
+도 262 <br>
+레 294 <br>
+미 330 <br>
+파 349 <br>
+솔 392 <br>
+라 440 <br>
+시 494 <br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+피에조 부저는 3번핀에 연결한다.
+
+void setup()
+{
+  tone(3, 392);
+  delay(2000);
+  tone(3, 330);
+  delay(900);
+  noTone(3);
+  delay(100);
+  tone(3, 330);
+  delay(1000);
+  
+  tone(3, 392);
+  delay(1000);
+  tone(3, 330);
+  delay(1000);
+  tone(3, 262);
+  delay(1000);
+  noTone(3);
+}
+
+void loop()
+{
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
