@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>피에조 부저 연주(학교종이땡땡땡)</h1>
+        <p>
+피에조 부저가 학교종이땡땡땡 노래를 연주한다. <br><br>
+도 262 <br>
+레 294 <br>
+미 330 <br>
+파 349 <br>
+솔 392 <br>
+라 440 <br>
+시 494 <br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+피에조 부저는 3번핀에 연결한다.
+
+int freq[] = {392,392,440,440,392,392,330, \
+            392,392,330,330,294, \
+            392,392,440,440,392,392,330, \
+            392,330,294,330,262};
+int dTime[] = {200,200,200,200,200,200,500, \
+             200,200,200,200,1000,\
+             200,200,200,200,200,200,500, \
+             200,200,200,200,1000};
+
+void setup()
+{
+}
+
+void loop()
+{
+  for (int i=0; i<sizeof(freq)/sizeof(int); i=i+1) 
+  {
+    tone(3, freq[i]);
+    delay(dTime[i]);
+    noTone(3);
+    delay(100);
+  } 
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
