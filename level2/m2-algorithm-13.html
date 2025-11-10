@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>계단오르기</h1>
+        <p>
+길동이는 n개의 단으로 구성된 계단을 오르려고 한다. 
+길동이는 계단을 오를 때 기분에 따라서 한 번에 1단 또는 2단을 올라갈 수 있다. 
+계단의 크기 n이 주어질 때, 길동이가 이 계단을 올라갈 수 있는 모든 경우의 수를 구하는 프로그램을 작성하시오. 
+만약 계단이 3개라면 길동이는 1, 1, 1로 올라가는 법과 
+1, 2로 올라가는 법, 2, 1로 올라가는 법의 3가지 서로 다른 방법이 있다. 
+입력으로 계단의 수 n이 입력된다(단 n은 20보다 작은 자연수). 
+출력은 길동이가 계단을 오르는 모든 방법의 수를 출력한다.
+        </p>
+        <h2>입력</h2> 
+        <p>    
+계단의 수 n이 입력된다(단 n은 20보다 작은 자연수). <br><br>
+3
+        </p>
+        <h2>출력</h2> 
+        <p>    
+계단을 오르는 모든 방법의 수를 출력한다.<br><br>
+3
+        </p>
+        <h2>풀이</h2> 
+        <pre>
+
+n = len(A)
+
+def fun(v):
+    if v == 1:
+        return 1
+    if v == 2:
+        return 2
+    return fun(v-1) + fun(v-2)
+
+print(fun(n))
+
+        </pre>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
