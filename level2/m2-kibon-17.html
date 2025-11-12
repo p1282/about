@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 1~100적기</h1>
+        <p>
+1~100 숫자를 10개씩 10줄로 적는다.
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+1~100 숫자
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+1~10 적기
+import turtle
+
+turtle.shape('turtle')
+turtle.speed(1)
+turtle.color('blue')
+
+turtle.penup()
+
+for i in range(1,11,1):
+    turtle.write(i)
+    turtle.dot()
+    turtle.forward(30)
+
+-------
+1~20 을 두줄에 적기
+import turtle
+
+turtle.shape('turtle')
+turtle.speed(1)
+turtle.color('blue')
+
+turtle.penup()
+
+for i in range(1,11,1):
+    turtle.write(i)
+    turtle.dot()
+    turtle.forward(30)
+
+turtle.goto(0,-30)
+
+for i in range(11,21,1):
+    turtle.write(i)
+    turtle.dot()
+    turtle.forward(30)
+
+-------
+1~100 열줄에 적기
+import turtle
+
+turtle.shape('turtle')
+turtle.speed(1)
+turtle.color('blue')
+
+turtle.penup()
+
+y = 0
+st =  1
+
+for j in range(10):
+    for i in range(st,st+10,1):
+        turtle.write(i)
+        turtle.dot()
+        turtle.forward(30)
+
+    y = y - 30
+    turtle.goto(0,y)
+    st = st + 10
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
