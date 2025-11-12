@@ -44,6 +44,44 @@ n, k = map(int, input().split())
 data = list(map(int, input().split()))
 
 A = []
+
+t = 0
+for i in range(0,k,1):
+    t = t + data[i]
+A.append(t)
+
+
+t = 0
+for i in range(1,k+1,1):
+    t = t + data[i]
+A.append(t)
+
+t = 0
+for i in range(2,k+2,1):
+    t = t + data[i]
+A.append(t)
+
+-------       
+n, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+A = []
+
+for j in range(0,n-k+1,1):
+    t = 0
+    for i in range(j,k+j,1):
+        t = t + data[i]
+    A.append(t)
+
+print(max(A))
+
+            
+-------
+            
+n, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+A = []
 for i in range(k):
     A.append(data[i])
     ans = sum(A)
