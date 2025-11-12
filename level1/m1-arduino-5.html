@@ -25,6 +25,21 @@
         <h2>풀이</h2> 
         <p>
         <pre>
+버튼 들어가는 선을 + 에 연결하고 나가는 선을 A0에 연결한다.
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int a = analogRead(A0);
+  Serial.println(a);
+  delay(1000); 
+}
+-------
+          
+            
 버튼은 4번핀과 음극에 연결한다.
 
 void setup()
