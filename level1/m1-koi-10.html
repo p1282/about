@@ -43,29 +43,18 @@ N과 P를 입력받아 위와 같이 정의된 연산을 수행하였을 때,  �
         <h2>풀이</h2> 
         <p>
         <pre>
-days, m = map(int,input().split())
-
+n,p = map(int,input().split())
+tmp = n
 A = []
-A.append(0)
-A.append('a')
-A.append('b')
 
-for i in range(3,days+1,1):
-    A.append(A[i-1] + A[i-2])
+while True:
+    A.append(tmp)
+    tmp = (tmp * n) % p
+    if tmp in A:
+        print(len(A) - A.index(tmp))
+        break
 
-acnt = 0
-bcnt = 0
-for i in A[days]:
-    if i == 'a':
-        acnt += 1
-    elif i == 'b':
-        bcnt += 1
-
-print(acnt, bcnt)
-for i in range(1, m+1, 1):
-    if i*acnt <= m:
-        if (m - i * acnt) % bcnt == 0:
-            print(i, (m - i * acnt)//bcnt)
+            
         </pre>
         </p>
         <p></p>
