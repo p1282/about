@@ -40,6 +40,37 @@
         <h2>풀이</h2> 
         <p>
         <pre>
+
+days, m = map(int,input().split())
+
+def funA(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 0
+
+    return funA(n-1) + funA(n-2)
+
+def funB(n):
+    if n == 1:
+        return 0
+    if n == 2:
+        return 1
+
+    return funB(n-1) + funB(n-2)
+
+
+a = funA(days)
+b = funB(days)
+
+for i in range(1,m):
+    for j in range(i,m):
+
+        if ((a * i) + (b * j)) == m:
+            print(i,j)
+    
+-------
+            
 days, m = map(int,input().split())
 
 A = []
