@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 패턴그리기2</h1>
+        <p>
+원을 반복적으로 그린다. 크기를 줄이고, 색상을 변화시키면서 반복해서 그린다.
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+숫자 (원의 갯수를 숫자로 입력)
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+반복적인 원 그리기
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+import turtle
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+
+b = 0
+n = int(input())
+s = 180
+for j in range(90):
+    for i in range(n):
+        turtle.color(1,0,b)
+        turtle.circle(s)
+        turtle.right(360/n)
+    b = b + (1/90)
+    s = s - (2)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
