@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 패턴그리기</h1>
+        <p>
+원하는 도형을 반복적으로 그린다. 크기를 줄이고, 색상을 변화시키면서 반복해서 그린다.
+        </p>
+        
+        <h2>입력</h2> 
+        <p>    
+숫자 (그리고자 하는 도형 모양을 숫자로 입력)
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+반복적인 도형 그리기
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+import turtle
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+turtle.pensize(3)
+
+n = int(input())
+s = 300
+turtle.color(0,0,1)
+for i in range(n):
+    turtle.forward(s)
+    turtle.left(360/n)
+-------
+
+import turtle
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+turtle.pensize(3)
+
+n = int(input())
+s = 300
+
+turtle.color(0,0,1)
+for j in range(20):
+    for i in range(n):
+        turtle.forward(s)
+        turtle.left(360/n)
+    turtle.right(360/20)
+
+-------
+import turtle
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+turtle.pensize(2)
+
+n = int(input())
+s = 300
+
+turtle.color(0,0,1)
+for k in range(30):
+    for j in range(20):
+        for i in range(n):
+            turtle.forward(s)
+            turtle.left(360/n)
+        turtle.right(360/20)
+    s = s - 10
+
+-------
+import turtle
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+turtle.pensize(2)
+
+n = int(input())
+s = 300
+r = 0
+for k in range(30):
+    turtle.color(r,0,1)
+    for j in range(20):
+        for i in range(n):
+            turtle.forward(s)
+            turtle.left(360/n)
+        turtle.right(360/20)
+    s = s - 10
+    r = r + (1/30)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
