@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>주사위 2개값</h1>
+        <p>
+2개의 주사위를 던졌을때 나오는 값을 보여준다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+임의로 던져진 주사위 값이 2개 출력된다
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+import random
+
+while True:
+    print('주사위 2개를 굴립니다....')
+    print('주사위는 다음과 같습니다')
+    a = random.randint(1,6)
+    b = random.randint(1,6)
+    
+    print(a, b)
+    print()
+    ans = input('계속 할래요?[y/n]')
+    if ans == 'n' or ans == 'N':
+        break
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
