@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>원그리기</h1>
+        <p>
+거북이가 10개의 원을 점점 커지게 그린다
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+10개의 크기가 다른 원
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+import turtle
+
+turtle.bgcolor('black')
+turtle.pencolor('red')
+turtle.pensize(4)
+turtle.shape('turtle')
+
+n=0
+while True:
+    n = n + 1
+    if n >= 10:
+        break
+    turtle.penup()
+    turtle.goto(0, -n*20)
+    turtle.pendown()
+    turtle.circle(n * 20)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
