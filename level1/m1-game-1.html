@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>오늘의 운세</h1>
+        <p>
+키보드의 아무값이나 적고 엔터를 치면 "오늘의 운세"를 보여준다. 
+아무값도 적지않고 엔터를 치면 프로그램을 종료한다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+오늘의 운세를 보여준다. 
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+import random
+run = True
+while run:
+    print()
+    print('-' * 10)
+    print('아무 키나 누르고 엔터를 치세요,')
+
+    print('그냥 엔터를 치면 실행이 끝납니다,')
+    question = input()
+    answer = random.randint(1,8)
+    if question == '':
+        run = False
+        break
+    elif answer == 1:
+        print('좋은 인연을 만날거예요!')
+    elif answer == 2:
+        print('서둘지 마세요. 오늘은 천천히..')
+    elif answer == 3:
+        print('뜻빡의 행운이 굴러와요')
+    elif answer == 4:
+        print('차 조심하세요')
+    elif answer == 5:
+        print('반장이 될거에요. 축하합니다.')
+    elif answer == 6:
+        print('멀리서 기쁜소식이 와요!')
+    elif answer == 7:
+        print('건강조심하세요. 잠시 쉬는게 좋아요')
+    elif answer == 8:
+        print('아주 편안한 날이 될 거예요')
+    print()
+
+print()
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
