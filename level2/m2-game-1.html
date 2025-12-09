@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이달리기</h1>
+        <p>
+입력된 숫자에 해당하는 거북이들의 달리기 시합
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+숫자 하나
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+원하는 수만큼의 거북이 들의 달리기 모습을 그려준다
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+
+'''
+name = []
+
+name.append('토르')
+name.append('아이언맨')
+name.append('스파이더맨')
+
+for i in range(0,3,1):
+    print(name[i])
+
+#-------
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    x = -200
+    y = random.randint(-200,200)
+    t.goto(x,y)
+    turtles.append(t)
+
+
+#-------
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color('blue')
+    x = -200
+    y = random.randint(-200,200)
+    t.goto(x,y)
+    turtles.append(t)
+
+#-------
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color('blue')
+    t.penup()
+    x = -200
+    y = i*100 - 200
+    t.goto(x,y)
+    turtles.append(t)
+
+#---
+
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+
+diff = 500 // c
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color('blue')
+    t.penup()
+    x = -200
+    y = i*diff - 230
+    t.goto(x,y)
+    turtles.append(t)
+
+#-----
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+col = ['blue','red','green','yellow','pink','cyan']
+diff = 500 // c
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color(col[i%6])
+    t.penup()
+    x = -200
+    y = i*diff - 230
+    t.goto(x,y)
+    turtles.append(t)
+
+#-----
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+col = ['blue','red','green','yellow','pink','cyan']
+diff = 500 // c
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color(col[i%6])
+    t.penup()
+    x = -200
+    y = i*diff - 230
+    t.goto(x,y)
+    t.pendown()
+    turtles.append(t)
+    
+for j in range(c):
+    step = random.randint(5,20)
+    turtles[j].forward(step)
+'''
+#-----
+import turtle, random
+
+c = int(input('거북이 몇마리 참가하나요? '))
+col = ['blue','red','green','yellow','pink','cyan']
+diff = 500 // c
+turtles = []
+for i in range(c):
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.color(col[i%6])
+    t.penup()
+    x = -200
+    y = i*diff - 230
+    t.goto(x,y)
+    t.pendown()
+    turtles.append(t)
+run = True
+while run:    
+    for j in range(c):
+        step = random.randint(5,20)
+        turtles[j].forward(step)
+        x,y = turtles[j].pos()
+        if x > 200:
+            run = False
+            break
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
