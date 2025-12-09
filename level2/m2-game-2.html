@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>탁구게임</h1>
+        <p>
+탁구공을 사이에 두고 파란색 과 빨간색 거북이가 탁구시합을 한다
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+키보드 w와 s를 누르면 파란색 거북이가 움직이고, 
+키보드 위쪽화살표와 아래쪽화살표를 누르면 빨간색 거북이가 움직인다.
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+거북이가 움직이면서 탁구공을 치는 게임이다
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+import turtle
+turtle.bgcolor('gray')
+left = turtle.Turtle()
+left.shape('turtle')
+left.color('blue')
+left.penup()
+left.goto(-250,0)
+left.speed(1)
+
+right = turtle.Turtle()
+right.shape('turtle')
+right.color('red')
+right.penup()
+right.goto(250,0)
+right.right(180)
+right.speed(1)
+
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape('circle')
+ball.color('yellow')
+ball.penup()
+ball.goto(0,0)
+
+def left_up():
+    print('left up')
+def left_down():
+    print('left down')
+def right_up():
+    print('right up')
+def right_down():
+    print('right up')
+    
+wn = turtle.Screen()
+wn.listen()
+wn.onkeypress(left_up,'w')
+wn.onkeypress(left_down,'s')
+wn.onkeypress(right_up,'Up')
+wn.onkeypress(right_down,'Down')
+
+#--------
+import turtle
+turtle.bgcolor('gray')
+left = turtle.Turtle()
+left.shape('turtle')
+left.color('blue')
+left.penup()
+left.goto(-250,0)
+left.speed(1)
+
+right = turtle.Turtle()
+right.shape('turtle')
+right.color('red')
+right.penup()
+right.goto(250,0)
+right.right(180)
+right.speed(1)
+
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape('circle')
+ball.color('yellow')
+ball.penup()
+ball.goto(0,0)
+
+def left_up():
+    y = left.ycor()
+    y = y + 20
+    left.sety(y)
+    
+def left_down():
+    y = left.ycor()
+    y = y - 20
+    left.sety(y)
+
+def right_up():
+    y = right.ycor()
+    y = y + 20
+    right.sety(y)
+
+def right_down():
+    y = right.ycor()
+    y = y - 20
+    right.sety(y)
+    
+wn = turtle.Screen()
+wn.listen()
+wn.onkeypress(left_up,'w')
+wn.onkeypress(left_down,'s')
+wn.onkeypress(right_up,'Up')
+wn.onkeypress(right_down,'Down')
+
+#-----------
+import turtle
+wn = turtle.Screen()
+wn.setup(width=800,height=500)
+wn.listen()
+
+turtle.bgcolor('gray')
+left = turtle.Turtle()
+left.shape('turtle')
+left.color('blue')
+left.penup()
+left.goto(-250,0)
+left.speed(1)
+
+right = turtle.Turtle()
+right.shape('turtle')
+right.color('red')
+right.penup()
+right.goto(250,0)
+right.right(180)
+right.speed(1)
+
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape('circle')
+ball.color('yellow')
+ball.penup()
+ball.goto(0,0)
+
+def left_up():
+    y = left.ycor()
+    y = y + 20
+    left.sety(y)
+    
+def left_down():
+    y = left.ycor()
+    y = y - 20
+    left.sety(y)
+
+def right_up():
+    y = right.ycor()
+    y = y + 20
+    right.sety(y)
+
+def right_down():
+    y = right.ycor()
+    y = y - 20
+    right.sety(y)
+    
+wn.onkeypress(left_up,'w')
+wn.onkeypress(left_down,'s')
+wn.onkeypress(right_up,'Up')
+wn.onkeypress(right_down,'Down')
+
+dx = 2
+dy = 2
+while True:
+    x = ball.xcor()
+    y = ball.ycor()
+    x = x + dx
+    y = y + dy
+    ball.setx(x)
+    ball.sety(y)
+    
+    if y  > 240 or y < -240:
+        dy *= -1
+    if x > 390 or x < -390:
+        dx *= -1
+    
+    if x > 230 and \
+       y < right.ycor()+20 and \
+       y > right.ycor()-20:
+        ball.setx(230)
+        dx *= -1
+
+    if x < -230 and \
+       y < left.ycor()+20 and \
+       y > left.ycor()-20:
+        ball.setx(-230)
+        dx *= -1
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
