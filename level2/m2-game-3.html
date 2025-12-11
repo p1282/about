@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>snake game(p5.js)</h1>
+        <p>
+뱀을 키보드로 움직여 사과를 먹게하는 게임이다. 사과를 먹으면 뱀은 크기가 커지고, 
+사과는 사라지고, 다른곳에 다시 사과에 나타나서 계속 사과를 먹을 수 있다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+뱀게임
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+var x= 0;
+var y= 0;
+var s = 10;
+var dx = 0;
+var dy = 0;
+var fx = 200;
+var fy = 200;
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  fill(0,255,0);
+  rect(x,y,s,s);
+  x = x + dx;
+  y = y + dy;
+  edge();
+  food();
+  var r = eat();
+  if (r == true) {
+    fx = random(50,350);
+    fy = random(50,350);
+    s = s + 10;
+  }
+}
+function eat() {
+  var d = dist(x,y, fx,fy);
+  if (d <= 10) { 
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function food() {
+  fill(255,0,0);
+  rect(fx, fy, 10,10);
+}
+
+function edge() {
+  if (x < 0) {
+      x = 0;
+  }
+  if (y < 0) {
+      y = 0;
+  }
+  if (x > width-s) {
+      x = width-s;
+  }
+  if (y > height-s) {
+      y = height-s;
+  }  
+}
+function keyPressed() {
+  
+  if (keyCode == 37) {
+      dx = -1; dy = 0;
+  } else if (keyCode == 39) {
+      dx = 1;  dy = 0;
+  } else if (keyCode == 38) {
+      dy = -1; dx = 0;
+  } else if (keyCode == 40) {
+      dy = 1;  dx = 0;
+  }
+}
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
