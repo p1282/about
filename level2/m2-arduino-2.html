@@ -30,6 +30,7 @@
 LED 는 8번 핀에 연결하고, 
 초음파센서는 출력센서는 2번핀에 입력센서는 5번핀에 연결한다.
 
+int a=0;            
 void setup()
 {
   pinMode(2, OUTPUT);
@@ -37,23 +38,20 @@ void setup()
   pinMode(8, OUTPUT);
 }
 
-void checkdist() 
+int checkdist() 
 {
-  digitalWrite(2,HIGH);
+  digitalWrite(12,HIGH);
   delayMicroseconds(10);
-  digitalWrite(2,LOW);
-  int d = pulseIn(5,HIGH);
-  if (d < 200) {
-    return true;
-  } else {
-    return false;
-  }
+  digitalWrite(12,LOW);
+  int d = pulseIn(13,HIGH);
+  d = d/2/29;
+  return d;
 }
 
 void loop()
 {
-  bool a = checkdist();
-  if (a == true) {
+  a = checkdist();
+  if (a <= 20) {
     digitalWrite(8,HIGH);
   } else {
     digitalWrite(8,LOW);
