@@ -31,6 +31,17 @@
 
 #include "Servo.h"
 Servo servo;
+int a=0;
+
+int checkdist() 
+{
+  digitalWrite(12,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(12,LOW);
+  int d = pulseIn(13,HIGH);
+  d = d/2/29;
+  return d;
+}
 
 void setup()
 {
@@ -38,17 +49,7 @@ void setup()
   pinMode(13, INPUT);
   servo.attach(7);
 }
-
-void checkdist() 
-{
-  digitalWrite(12,HIGH);
-  delayMicroseconds(10);
-  digitalWrite(12,LOW);
-  int d = pulseIn(13,HIGH);
-  int dist = d/29/2;
-  return round(dist);	
-}
-
+            
 void closing() 
 {
   servo.write(0);
@@ -62,7 +63,7 @@ void opening()
 void loop()
 {
   int a = checkdist();
-  if (a < 15) {
+  if (a <= 15) {
     closing();
   } else {
     opening();
