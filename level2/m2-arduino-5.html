@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>원하는LED켜기</h1>
+        <p>
+원하는 색상의 LED를 골라서 켠다<br><br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+색상입력 (red, green, blue)
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+빨간색 LED 7번핀에 연결한다.
+초록색 LED 8번핀에 연결한다.
+파란색 LED 9번핀에 연결한다.
+String m = "What color turn on?";
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop()
+{
+  Serial.println(m);
+  String s = Serial.readStringUntil('\n');
+  if (s == "red") {
+      digitalWrite(7, HIGH);
+      digitalWrite(8, LOW);
+      digitalWrite(9, LOW);
+  } else if (s == "green") {
+      digitalWrite(7, LOW);
+      digitalWrite(8, HIGH);
+      digitalWrite(9, LOW);
+  } else if (s == "blue") {
+      digitalWrite(7, LOW);
+      digitalWrite(8, LOW);
+      digitalWrite(9, HIGH);
+  }
+  delay(1000); 
+}
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
