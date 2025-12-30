@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>소수</h1>
+        <p>
+소수판단하기
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+13
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+소수
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+c = 0
+for i in range(1,n+1,1):
+    if n % i == 0:
+        c = c + 1
+if c == 2:
+    print('소수')
+else:
+    print('합성수')
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
