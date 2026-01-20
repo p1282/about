@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>SJ 갯수</h1>
+        <p>
+ACZSJJSPTVWSJU가 입력된다면 <br>
+SJ 문자가 몇번 나오는지 출력합니다 <br>
+        </p>
+        <h2>숫자하나</h2> 
+        <p>    
+ACZSJJSPTVWSJU
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+2
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(input())
+n = len(A)
+cnt = 0
+for i in range(n-1):
+    if A[i]=='S' and A[i+1]=='J':
+        cnt += 1
+print(cnt)    
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
