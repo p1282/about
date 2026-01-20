@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>3이 들어간 숫자의 갯수</h1>
+        <p>
+전체 숫자의 갯수가 입력되고 그 만큼의 수가 입력된다 <br>
+숫자들에서 3이 들어가있는 숫자는 몇개인지 출력합니다 <br>
+        </p>
+        <h2>숫자갯수와 숫자들이 입력된다</h2> 
+        <p>    
+10<br>
+31 10 31 3 13 201 42 1226 303 303<br>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+6
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+n = int(input())
+A = list(map(int,input().split()))
+
+B = []
+for i in range(n):
+    B.append(str(A[i]))
+
+c = 0
+for i in range(n):
+    if '3' in B[i]:
+        c += 1
+
+print(c)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
