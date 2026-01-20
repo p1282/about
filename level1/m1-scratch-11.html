@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>숫자뒤집기</h1>
+        <p>
+1234가 입력된다면 <br>
+숫자가 뒤집어진 4321을 출력합니다 <br>
+        </p>
+        <h2>숫자하나</h2> 
+        <p>    
+1234
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+4321
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+
+A = []
+
+while True:
+    a = n % 10
+    n = n // 10
+    A.append(a)
+    if n ==0:
+        break
+
+for i in range(len(A)):
+    print(A[i],end='')
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
