@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>로봇의 이동거리</h1>
+        <p>
+세종이는 로봇이 이동한 거리가 궁금하다.<br>
+현재 로봇의 위치가 입력되고, 최종 로봇이 도착한 위치가 입력된다.<br>
+로봇의 위치는 좌표 x, y 위치 값으로 입력된다.<br>
+0 0 위치는 가운데이고, 0 10 위치는 위쪽으로 10 만큼 이동한 위치를 말한다.<br>
+10 0 위치는 오른쪽으로 10 이동한 곳을 말한다.<br>
+로봇은 대각선으로 이동할 수 없고 오른쪽 왼쪽 위쪽 아래쪽 직선으로 이동한다<br>
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+        <pre> 
+4 10 4 1000
+-------
+4 5 10 8
+9   
+        </pre>	
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>
+990
+-------
+9
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+sx, sy, ex, ey = map(int, input().split())
+
+dx = abs(ex-sx)
+dy = abs(ey-ex)
+
+print(dx+dy)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
