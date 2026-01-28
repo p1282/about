@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>맛있는 콜사 만들기</h1>
+        <p>
+세종이는 맛있는 콜사를 몇개 만들수 있을지 궁금하다.<br>
+콜사는 콜라와 사이다를 동일한 갯수로 섞어서 만들어지는 음료수이다.<br>
+100원 콜라와 300원 사이다가 있다면 400원으로 맛있는 콜사를 만들수있다<br>
+800원있다면 맛있는 콜사가 2개 만들어 지고, 1200원있다면 3개를 만들 수 있다.<br>
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+        <pre> 
+콜라 가격과 사이다 가격이 입력되고 세종이가 가진 돈이 입력된다
+200 300 2000
+-------
+5 2 10
+-------
+100 200 150
+
+        </pre>	
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+        <pre>
+4
+-------
+1
+-------
+0
+        </pre>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+x, y, z = map(int, input().split())
+m = z // (x + y)
+
+print(m)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
