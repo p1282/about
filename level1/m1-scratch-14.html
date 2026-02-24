@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>티셔츠 사이즈별 갯수</h1>
+        <p>
+티셔츠가 사이즈별로 몇 벌씩 필요한지 가장 작은 사이즈부터 순서대로 갯수를 구해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+학생의 각각 사이즈가 입력됩니다.<br>    
+s m s m s
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+작은 사이즈부터 갯수를 출력합니다 (s, m, r) <br>    
+3 2 0
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(input().split())
+n = len(A)
+B = ['s','m','r']
+C = [0,0,0]
+for i in range(n):
+    if A[i] == s:
+        C[i] += 1
+print(C)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
