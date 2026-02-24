@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>수 뒤집기</h1>
+        <p>
+시작 날짜와 끝 날짜가 주어질 때, 두 날짜가 며칠만큼 떨어져 있는지를 구하려 합니다,<br>
+각 달의 날짜 수는 1월부터 순서대로 [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] 이며, 윤년은 고려하지 않습니다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+1423
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+3241
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = []
+n  = int(input())
+while True:
+    m = n % 10
+    A.append(m)
+    n = n // 10
+    if n == 0:
+        break
+
+print(A)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
