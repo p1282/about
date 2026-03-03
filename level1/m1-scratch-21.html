@@ -7,44 +7,41 @@
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <div class="timeline">
-        <h1>장갑쌍</h1>
+        <h1>3배수 5배수</h1>
         <p>
-왼손 장갑의 제품 번호가 들어있는 리스트와 오른손 장갑의 제품 번호가 들어있는 리스트가 있습니다.  <br>
-제품 번호는 1부터 10 사이의 자연수입니다.<br>
-제품 번호가 같은 왼손장갑과 오른손 장갑을 합쳐 장갑 한 쌍을 만들 수 있습니다.<br>
-이때, 최대한 많은 쌍의 장갑을 만들면 최대 몇 쌍을 만들 수 있는지 구해주세요.
+자연수가 들어있는 리스트에 3의 배수와 5의 배수 중 어떤 수가 더 많은지 구해주세요.
         </p>
         <p></p>
         <h2>입력</h2> 
         <p>
-2 1 2 2 4<br>
-1 2 2 4 4 7
+2 3 6 9 12 15 10 20 22 25
         </p>
         <p></p>
         <h2>출력</h2> 
         <p>
-4
+리스트에 3의 배수의 개수가 더 많다면 "three"를, 5의 배수의 개수가 더 많다면 "five"를, 3의 배수와 5의 배수의 개수가 같다면 "same"을 return 해주세요.<br>
+three            
         </p>
         <p></p>
         <h2>풀이</h2> 
         <p>
         <pre>
 A = list(map(int,input().split()))
-B = list(map(int,input().split()))
-
-A.sort()
-B.sort()
-
 n = len(A)
-c = 0
+cnt3 = 0
+cnt5 = 0
 for i in range(n):
-    if A[i] in B:
-        B.remove(A[i])
-        c += 1
-    else:
-        continue
+    if A[i] % 3== 0:
+        cnt3 += 1
+    if A[i] % 5== 0:
+        cnt5 += 1
 
-print(c)
+if cnt3 > cnt5:
+    print('three')
+elif cnt3 < cnt5:
+    print('five')
+else:
+    print('same')
 
         </pre>
         </p>
