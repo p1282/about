@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>팰린드롬</h1>
+        <p>
+앞에서부터 읽을 때와 뒤에서부터 읽을 때 똑같은 단어 또는 문장을 팰린드롬(palindrome)이라고 합니다. <br>
+예를 들어서 racecar, noon은 팰린드롬 단어입니다.<br>
+문장이 주어질 때 팰린드롬인지 아닌지를 구해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+palindrome<br>
+-------<br>
+noon
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+false<br>
+-------<br>
+true
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+s = input()
+n  = len(s)
+i = 0
+j = n-1
+ans = 'true'
+
+while True:
+    if s[i] == s[j]:
+        continue
+    else:
+        ans = 'false'
+        break
+print(ans)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
