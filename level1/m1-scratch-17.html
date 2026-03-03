@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>중급반 숫자</h1>
+        <p>
+학교에서는 중급반 영어수업 학생을 모집하고 있습니다. <br>
+중급영어수업은 시험성적이 65점 이상 80점 미만의 성적을 받은 학생만 들어올 수 있습니다.<br>
+영어중급수업에 신청한 사람이 10명일 때, 이 중에서 몇명이 수업을 들을수있는지 확인하려합니다.<br>
+10명 학생의 시험성적표가 들어올 때 수업참여 가능 학생수를 구해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+65 72 91 55 71 83 65 67 66  80
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+6
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split())))
+n  = len(A)
+t = 0
+for i in range(n):
+    if A[i] >= 65 and A[i] < 80:
+        t += 1
+print(t)
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
