@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>평균이하갯수</h1>
+        <p>
+평균은 자료의 합을 자료의 개수로 나눈 값을 의미합니다.  <br>
+자연수가 들어있는 리스트의 평균을 구하고, 평균 이하인 숫자는 몇 개 있는지 구하려합니다.<br>
+예를 들어 주어진 리스트가 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]이라면, 평균은 5.5이므로 리스트에서 평균 이하인 값은 5개입니다.<br>
+자연수가 들어있는 여러개 숫자가 주어질 때, 평균 이하인 값은 몇 개인지 구해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+1 2 3 4 5 6 7 8 9 10
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+5
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+n = len(A)
+mid = sum(A)/n
+c = 0
+for i in range(n):
+    if A[i] < mid:
+        c += 1
+print(c)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
