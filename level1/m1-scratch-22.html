@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>장갑쌍</h1>
+        <p>
+왼손 장갑의 제품 번호가 들어있는 리스트와 오른손 장갑의 제품 번호가 들어있는 리스트가 있습니다.
+제품 번호는 1부터 10 사이의 자연수입니다. 
+제품 번호가 같은 왼손장갑과 오른손 장갑을 합쳐 장갑 한 쌍을 만들 수 있습니다. 
+이때, 최대한 많은 쌍의 장갑을 만들면 최대 몇 쌍을 만들 수 있는지 구하려 합니다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+왼손 장갑의 제품 번호가 들어있는 리스트
+오른손 장갑의 제품 번호가 들어있는 리스트
+2 1 2 2 4
+1 2 2 4 4 7
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+
+1번 장갑 한 쌍, 2번 장갑 두 쌍, 4번 장갑 한 쌍을 만들면 최대 4개의 장갑 쌍을 만들 수 있습니다.
+4
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+L = list(map(int,input().split()))
+R = list(map(int,input().split()))
+n = len(L)
+cnt = 0
+for i in range(n):
+    if L[i] in R:
+        R.remove(L[i])
+        cnt += 1
+
+print(cnt)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
