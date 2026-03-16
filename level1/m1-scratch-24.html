@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>길이5이상인 단어</h1>
+        <p>
+단어들이 들어있는 리스트에서 길이가 5 이상인 단어를 리스트에 들어있는 순서대로 이어 붙이려 합니다.
+예를 들어 리스트가 다음과 같은 경우 ["my", "favorite", "color", "is", "violet"] 라면 
+"favoritecolorviolet"을 만들면 됩니다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+my favorite color is violet
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+favoritecolorviolet
+
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(input().split())
+n = len(A)
+B = []
+
+for i in range(n):
+    if len(A[i]) >= 5:
+        B.append(A[i])
+
+print(B)
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
