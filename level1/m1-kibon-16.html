@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>소수갯수</h1>
+        <p>
+자연수의 각 자릿수 중에서 소수는 몇 개인지 구하려 합니다. 
+즉, 자연수를 각 자릿수별로 나누었을 때, 2, 3, 5, 7이 몇 개 있는지 구하려 합니다.
+예를 들어, 자연수가 29022531일 때, 각 자릿수 중 소수의 위치는 다음과 같습니다.
+2 9 0 2 2 5 3 1 따라서 소수는 2 2 2 5 3 으로 총5개 입니다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+29022531
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+5
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+A = [2,3,5,7]
+c = 0
+
+while True:
+    m = n % 10
+    if m in A:
+        c += 1
+    n = n // 10
+    if n == 0:
+        break
+
+print(c)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
