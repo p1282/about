@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>몬스터잡기</h1>
+        <p>
+게임 캐릭터가 몬스터와 1:1 전투를 하려 합니다. 
+몬스터는 처음에 일정 수치의 체력(HP)을 가지고 있습니다. 
+캐릭터가 전투에서 이기려면 몬스터를 공격해 몬스터의 체력을 0이하로 만들어야합니다. 
+캐릭터는 공격 마법만 사용하며, 공격 마법은 항상 같은 데미지를 입힙니다. 
+몬스터는 힐링 마법만을 사용하며, 힐링 마법은 항상 같은 수치로 체력을 회복합니다. 
+둘은 항상 번갈아 가며 마법을 사용하고, 
+처음에는 항상 캐릭터가 먼저 공격을 시작합니다.
+캐릭터의 공격력 attack과 몬스터가 자신의 차례에 회복하는 체력 recovery, 
+몬스터의 초기 체력 hp가 매개변수로 주어질 때, 
+몬스터를 잡기 위해서 최소 몇 번 공격해야 하는지 완성해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+attack recovery hp 값이 빈공백을 사이에두고 입력됩니다.<br>
+30 10 60
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+3
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+a, r, h = map(int,input().split())
+c = 0
+
+while True:
+    h = h - a
+    c = c + 1
+    if h <= 0:
+        print('end')
+        break
+    h = h + r
+print(c)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
