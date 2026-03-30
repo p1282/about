@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>장학금</h1>
+        <p>
+학교에서는 학기가 끝날 때마다 장학금을 줍니다. 
+이때 장학생이 몇 명인지 구하려고 합니다. 장학금을 주는 조건은 다음과 같습니다.<br><br>
+1. 이번 학기 성적이 80점 이상이면서 1등인 학생<br>
+2. 직전 학기 대비 성적이 가장 많이 오른 학생(여러 명인 경우 해당 학생 전부)<br>
+단, 동점인 학생들은 등수가 같으며, 장학금은 중복으로 여러번 받지는 못합니다.
+장학생이 몇 명인지 구하세요.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+학생들의 이번 학기 성적과 지난학기 성적이 두줄로 입력됩니다.<br>
+70 100 70 80 50 95<br>
+35 65 80 50 20 60
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+두번째 100점 받은 학생은 1등이고 80점 이상이어서 장학금을 받습니다.<br>
+점수가 많이 오른학생은 다음과 같습니다.
+* 35 → 70점  (35점 향상) <br>
+* 65 → 100점 (35점 향상)<br>
+* 60 → 95점 (35점 향상)<br>
+이때 100점 학생은 이미 받았기 때문에 나머지 두사람이 장학금을 받습니다.
+그래서, 총 세사람이 장학금을 받습니다.<br>
+3
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+B = list(map(int,input().split()))
+
+maxv = 0
+
+for i in range(len(A)):
+    d = A[i] - B[i]
+    if maxv < d:
+        maxv = d
+
+C = [0] * (len(A))
+cnt= 0
+for i in range(len(A)):
+    if (d) == (A[i] - B[i]):
+        cnt += 1
+        C[i] = 1
+
+first = max(A)
+if first >= 80:
+    for i in range(len(A)):
+        if A[i] == first:
+            if C[i] == 0:
+                cnt += 1
+                C[i] = 1
+
+else:
+    pass
+
+print(sum(C))
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
