@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>평균값</h1>
+        <p>
+체조선수는 여러 심사위원의 점수 중 가장 높은 점수 하나와 가장 낮은 점수 하나를 제외하고 
+나머지 점수들의 평균을 계산하여 최종점수를 받습니다. 소수점 이하는 버립니다.
+예를 들어, A 선수가 10명의 심사위원에게 [35, 28, 98, 34, 20, 50, 85, 74, 71, 7]의 점수를 받았습니다.
+가장 높은 점수인 98점과 가장 낮은 점수인 7점을 제외하고 나머지 8명의 심사위원 점수 평균을 구하면 49.625점입니다. 
+여기서 소수점 이하의 수를 버리면 49점을 구하면 됩니다. 
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+35 28 98 34 20 50 85 74 71 7
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+49
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+maxv = -1
+minv = 101
+for i in range(len(A)):
+    maxv = max(maxv, A[i])
+    minv = min(minv, A[i])
+
+tot = sum(A) - maxv - minv
+print(tot//(len(A)-2))
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
