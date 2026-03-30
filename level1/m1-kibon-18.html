@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>상품권지급</h1>
+        <p>
+A 백화점에서는 고객의 구매금액에 따라 다음과 같이 상품권을 지급합니다.<br>
+| 100만 원 이상 구매 | 5만 원 상품권 |<br>
+| 60만 원 이상 구매  | 3만 원 상품권 |<br>
+| 40만 원 이상 구매  | 2만 원 상품권 |<br>
+| 20만 원 이상 구매  | 1만 원 상품권 |<br>
+이때, 상품권은 지급 가능한 가장 큰 금액으로 한 장만 지급합니다. 
+예를 들어 고객이 65만 원을 구매했다면, 3만 원 상품권 한 장만 지급합니다.
+고객들의 구매 금액이 들어있는 목록이 입력될 때, 
+고객들에게 지급해야 하는 상품권 총액을 구하는 프로그램을 작성하세요.
+ 
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+고객의 구매 금액 리스트<br>
+150000 210000 399990 990000 1000000
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+만원 2장, 3만원 1장, 5만원 1장 상품권을 지급합니다. 총 10만원입니다.<br>
+100000
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+B = [0] * 6
+
+for i in range(len(A)):
+    if A[i] >= 1000000:
+        B[5] += 1
+    elif A[i] >= 600000:
+        B[3] += 1
+    elif A[i] >= 400000:
+        B[2] += 1
+    elif A[i] >= 200000:
+        B[1] += 1
+
+t = 0
+for i in range(len(B)):
+    t += B[i] * (i*10000)
+print(t)
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
