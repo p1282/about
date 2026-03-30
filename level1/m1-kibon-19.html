@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>내 등수</h1>
+        <p>
+학생들의 시험 점수가 주어졌을 때, 나는 몇 등인지 구하려 합니다. 
+학생 번호는 1번부터 시작하며, 내 번호는 입력으로 주어집니다. 
+시험 점수는 학생번호 순서로 입력되어 집니다. 
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>
+학생번호 순서로 성적이 입력됩니다.<br>
+나의 번호가 입력됩니다.<br>
+20 60 98 59<br>
+2
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>
+2번 학생의 성적은 60점입니다. 98점이 1등이고, 나는 2등입니다.<br>
+2
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+m = int(input())
+myscore = A[m-1]
+
+A.sort(reverse=True)
+for i in range(len(A)):
+    if A[i] == myscore:
+        print(i+1,'등')
+        break
+
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
