@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 패턴그리기</h1>
+        <p>
+원하는 도형을 원하는 횟수만큼 반복해서 그린다. 
+위 작업은 도형을 점점 키우면서 반복한다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+몇각형 그릴까요? <br>
+몇개를 그릴까요? <br>
+위 작업을 몇번 반복할까요? <br>
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+8 <br>
+16 <br>
+10
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+
+import turtle,random
+
+x = int(input('몇각형 그릴까요'))
+y = int(input('몇개를 그릴까요'))
+z = int(input('위 작업을 몇번 반복할까요'))
+
+turtle.bgcolor('black')
+turtle.shape('turtle')
+turtle.speed(0)
+turtle.pensize(3)
+
+for k in range(z):
+    r = 1
+    b = 0
+    for j in range(y):
+        turtle.color(r,0,b)
+        for i in range(x):
+            turtle.forward(50+(k*z))
+            turtle.right(360/x)
+        turtle.right(360/y)
+        b = b + (1/y)
+
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
