@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>쇼핑몰할인</h1>
+        <p>
+A 쇼핑몰에서는 회원 등급에 따라 할인 서비스를 제공합니다.
+회원 등급에 따른 할인율은 다음과 같습니다. <br>
+(S = 실버 5% 할인, G = 골드 10%할인, V = VIP 15%할인) <br>
+상품의 가격 price와 구매자의 회원 등급을 나타내는 문자열 grade가 매개변수로 주어질 때, 
+할인 서비스를 적용한 가격을 return 하도록 solution 함수를 완성해주세요.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+첫째줄에 회원수가 입력되고, 다음줄부터 회원 각자가 쓴 돈과 회원등급이 입력된다<br>
+2<br>
+2500 V<br>
+96900 S
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+2125<br>
+92055
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+A = []
+B = []
+for i in range(n):
+    a, b= input().split()
+    A.append(a)
+    B.append(b)
+for i in range(n):
+    if B[i] == 'S':
+        print( A[i]	* 0.95)
+    elif B[i] == 'G':
+        print( A[i] * 0.9)
+    else:
+        print( A[i] * 0.85)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
