@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 숫자쓰기</h1>
+        <p>
+거북이가 1부터 100숫자를 적는다
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+사각형모양이 되게 10단위씩 잘라서 숫자를 적는다
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+import turtle
+
+turtle.shape('turtle')
+turtle.speed(10)
+turtle.pensize(3)
+
+turtle.penup()
+
+for j in range(10):
+    turtle.goto(-100,100- 30*j)
+    for i in range(10):
+        turtle.write(i + 10*j)
+        turtle.dot()
+        turtle.forward(30)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
