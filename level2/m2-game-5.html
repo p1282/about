@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>거북이 원그리기</h1>
+        <p>
+임의의 위치에 임의의 색으로 임의의 크기 원을 그린다
+위 작업을 함수를 이용해서 100번 반복한다.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+100개의 원
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+
+import turtle, random
+
+turtle.shape('turtle')
+turtle.speed(0)
+def fun():
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    turtle.color(r,g,b)
+    x = random.randint(-200,200)
+    y = random.randint(-200,200)
+    turtle.penup()
+    turtle.goto(x,y)
+    s = random.randint(10,80)
+    turtle.pendown()
+    turtle.circle(s)
+
+for i in range(50):
+    fun()
+
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
