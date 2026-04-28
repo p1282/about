@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>수강대상인원</h1>
+        <p>
+A 대학에서는 수준별 영어 강의를 제공하고 있습니다. 
+초급 영어 강의는 토익시험에서 650점 이상 800점 미만의 성적을 취득한 학생만을 수강대상으로 하고 있습니다. 
+초급 영어 강의에 수강신청한 사람이 10명일 때, 이 중에서 몇명이 수강 대상에 해당하는지 확인하려합니다.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+650 722 914 558 714 803 650 679 669 800
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+6        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+
+cnt = 0
+for i in range(len(A)):
+    if 650 <= A[i] < 800:
+        cnt = cnt + 1
+
+print(cnt)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
