@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 processing 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>동그라미 움직이기</h1>
+        <p>
+동그라미 도형을 움직여보기.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음 
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+움직이는 동그라미 
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+void setup() {
+}
+void draw() {
+}
+-----------------------------
+
+float x = 0;
+void setup() {
+  size(600,400);
+}
+void draw() {
+  background(51);
+  fill(102);
+  stroke(255);
+  ellipse(x,200,32,32);
+  x = x + 1;
+}
+-----------------------------
+
+float x = 0;
+void setup() {
+  size(600,400);
+}
+void draw() {
+  background(51);
+  fill(102);
+  stroke(255);
+  ellipse(x,200,32,32);
+  if (x < width) {
+     x = x + 1;
+  }
+}
+-----------------------------
+
+float x = 0;
+int d = 1;
+void setup() {
+  size(600,400);
+}
+void draw() {
+  background(51);
+  fill(102);
+  stroke(255);
+  ellipse(x,200,32,32);
+  if (x < width) {
+     x = x + d;
+  }
+}
+-----------------------------
+
+float x = 0;
+int d = 1;
+void setup() {
+  size(600,400);
+}
+void draw() {
+  background(51);
+  fill(102);
+  stroke(255);
+  ellipse(x,200,32,32);
+  if (x > width) {
+     d = -1;
+  }
+  if (x < 0) {
+     d = 1;
+  }
+  x = x + d;
+}
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
