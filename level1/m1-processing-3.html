@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초급 processing 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>이중반복문</h1>
+        <p>
+이중반복문을 사용해보자.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+없음 
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+이중반복문으로 도형을 그려보기
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+
+void setup() {
+}
+void draw() {
+}
+-----------------------------
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+}
+-----------------------------
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+  for (int i=0;i<width;i=i+20) {
+    println(i);
+    delay(600);
+  }
+}
+-----------------------------
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+  for (int i=0;i<width;i=i+20) {
+    println(i);
+    for (int j=0;j<height;j+=20) {
+        print(i,j);
+    }
+  }
+}
+-----------------------------
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+  for (int i=0;i<width;i=i+20) {
+    for (int j=0;j<height;j+=20) {
+        rect(i,j,20,20);
+    }
+  }
+}
+-----------------------------
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+  for (int i=0;i<width;i=i+20) {
+    for (int j=0;j<height;j+=20) {
+        fill(i,0,j);
+        rect(i,j,20,20);
+    }
+  }
+}
+-----------------------------
+
+
+void setup() {
+  size(400,400);
+}
+void draw() {
+  background(220);
+  for (int i=0;i<mouseX;i=i+20) {
+    for (int j=0;j<mouseY;j+=20) {
+        fill(i,0,j);
+        rect(i,j,20,20);
+    }
+  }
+}
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m1.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
