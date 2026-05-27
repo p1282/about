@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>주스만들기</h1>
+        <p>
+주스 1잔을 만들려면 사과 3개와 당근 1개가 필요합니다. 
+그런데 키우는 토끼에게 먹이를 주기 위해 사과와 당근 종류에 상관없이 k개를 빼놓으려고 합니다. 
+주스는 최대한 많이 만들수록 좋습니다.
+
+사과 개수와 당근 개수, 토끼에게 줄 먹이 개수 k가 주어질 때 
+주스를 최대 몇 잔 만들 수 있는지 구하세요.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+사과 개수와 당근 개수, 토끼에게 줄 먹이 개수 <br><br>
+5 1 2<br>
+------------<br>
+10 5 4
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+최대 주스를 몇잔 만들 수 있는지 출력합니다.<br><br>
+1<br>
+------------<br>
+2
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+a,b,k = map(int,input().split())
+
+if a == b*3:
+    km = k//4
+    kn = k%4
+    if kn == 0:
+        print(b - km)
+    else:
+        print(b - km - 1)
+
+elif a > b*3:
+    k = k - (a - (b*3))
+    if k > 0:
+        km = k //4
+        kn = k % 4
+        if kn == 0:
+            print(b - km)
+        else:
+            print(b - km-1)
+    elif k <= 0:
+        print(b)
+
+elif a < b*3:
+    k = k - (b - (a//3))
+    if k > 0:
+        km = k // 4
+        kn = k % 4
+        if kn ==0:
+            print(a//3 - km)
+        else:
+            print(a//3 - km-1)
+            
+    elif k <= 0:
+        print(a//3)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
