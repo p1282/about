@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>타일색칠하기</h1>
+        <p>
+타일을 'R', 'G', 'B' 색으로 칠하려 합니다. 
+R 색으로는 3칸을 한 번에, G 색으로는 2칸을 한 번에 칠할 수 있으며, B 색으로는 1칸을 칠할 수 있습니다.
+색은 R, G, B 순서로 한 번씩 번갈아 가면서 사용해야 하며, 타일의 길이를 넘겨서 칠할 수는 없습니다.
+예를 들어, 타일 길이가 11이면 "RRRGGBRRRGG"의 색으로 칠할 수 있습니다.
+타일 길이가 입력될때 타일을 색칠한 순서를 문자열로 출력하세요. 
+순서에 맞게 타일을 칠할 수 없다면 -1을 return 해주세요.
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+타일길이가 입력됩니다. 1000 이하의 자연수 입니다.<br><br>
+11<br>
+------------<br>
+16
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+타일을 색칠한 순서를 문자열로 출력 해주세요.<br><br>
+RRRGGBRRRGG<br>
+------------<br>
+-1
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n= int(input())
+
+x = n // 6
+y = n % 6
+
+if y==0 or y==5 or y==3:
+    print('ok')
+    if y==0:
+        ans = 'RRRGGB' * x
+    elif y==5:
+        ans = 'RRRGGB' * (x)
+        ans = ans + 'RRRGG'
+    elif y==3:
+        ans = 'RRRGGB' * (x)
+        ans = ans + 'RRR'
+    print(ans)        
+else:
+    print('-1')
+    
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
