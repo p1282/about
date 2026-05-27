@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>총교통비</h1>
+        <p>
+여행객들의 총 교통비를 계산하려고 합니다. 교통편은 "Bus", "Ship", "Airplane" 총 3가지입니다. 
+나이가 20살 이상이면 어른 요금을, 그렇지 않으면 어린이 요금을 받습니다. 
+각 교통편별 가격은 다음과 같습니다.
+(Bus )      어른: 40,000원,  어린이: 15,000원  
+(Ship)      어른: 30,000원,  어린이: 13,000원  
+(Airplane) 어른: 70,000원,  어린이: 45,000원  
+
+단, 할인적용이 있습니다. 여행객들이 10명 이상인 경우 연령에 따라 할인을 받습니다.
+(어른   ) 10% 할인
+(어린이) 20% 할인
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+한 그룹의 여행객들의 나이가 모두 입력됩니다.
+그 여행객이 이용할 교통편이 들어옵니다.<br>
+13 33 45 11 20 
+Bus
+------------
+25 11 27 56 7 19 52 31 77 8
+Ship
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+150000
+------------
+203600
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(map(int,input().split()))
+trans = input()
+
+n = len(A)
+
+ans = 0
+if trans == 'Bus':
+    adult = 40000
+    child = 15000
+elif trans == 'Ship':
+    adult = 30000
+    child = 13000
+elif trans == 'Airplane':
+    adult = 70000
+    child = 45000
+    
+
+if n >= 10:
+    for i in range(n):
+        if A[i] >= 20:
+            ans += (adult*0.9)
+        else:
+            ans += (child*0.8)
+    
+else:
+    for i in range(n):
+        if A[i] >= 20:
+            ans += adult
+        else:
+            ans += child
+    
+print(round(ans))
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
