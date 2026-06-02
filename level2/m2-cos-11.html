@@ -36,6 +36,27 @@ RRRGGBRRRGG<br>
         <h2>풀이</h2> 
         <p>
         <pre>
+
+n = int(input())
+if n % 6 == 0:
+    m = n // 6    
+    ans = 'RRRGGB' * m
+    print(ans)
+elif n % 6 == 5:
+    m =  n // 6
+    ans = 'RRRGGB' * m
+    ans = ans + 'RRRGG'
+    print(ans)
+elif n % 6 == 3:
+    m = n // 6
+    ans = 'RRRGGB' * m
+    ans = ans + 'RRR'
+    print(ans)
+else:
+    print(-1)
+
+-----------------------
+            
 n= int(input())
 
 x = n // 6
