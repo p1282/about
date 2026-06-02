@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>체력시험</h1>
+        <p>
+체력시험 합격 인원을 알아보려고 합니다. 
+체력시험 종목으로는 윗몸일으키기, 팔굽혀펴기, 달리기가 있습니다. 
+종목별 합격기준은 다음과 같습니다.<br><br>
+| 윗몸일으키기 | 팔굽혀펴기 | 달리기      |<br>
+|   80점 이상   |   88점 이상 | 70점 이상 |<br><br>
+* 통과한 종목이 하나 이하거나, 
+  통과 점수의 반을 넘기지 못한 종목이 있다면 불합격입니다.<br>
+* 그 외에는 합격입니다.<br>
+시험에 합격한 인원을 출력합니다.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+학생수가 먼저 입력됩니다. 다음줄부터는 각 학생의 
+윗몸일으키기, 팔굽혀펴기, 달리기 점수가 차례로 들어옵니다. <br><br>
+2
+30 40 100<p>    
+97 88 95<p>    
+-------<p>    
+6
+90 88 70<p>    
+85 90 90<p>    
+100 100 70<p>    
+30 90 80<p>    
+40 10 20<p>    
+83 88 80<p>    
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+시험합격인원<br><br>
+1<br>
+------<br>
+4
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+n = int(input())
+def fun(a,b,c):
+    cnt = 0
+    bad = 0
+    if a >=80:
+        cnt += 1
+    elif a <= 40:
+        bad += 1
+    if b >=88:
+        cnt += 1
+    elif b <= 44:
+        bad += 1
+    if c >=70:
+        cnt += 1
+    elif c <= 35:
+        bad += 1
+    if cnt <= 1:
+        return False
+    else:
+        if bad == 0:
+            return False
+        else:
+            return True
+        
+
+ans = 0
+for i in range(n):
+    a,b,c = map(int,input().split())
+    r = fun(a,b,c)
+    if r == True:
+        ans += 1
+
+print(ans)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
