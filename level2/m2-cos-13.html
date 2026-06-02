@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중급 알고리즘 문제 상세</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="timeline">
+        <h1>상담받기</h1>
+        <p>
+학생 10명이 상담을 받기 위해 매일 한 명씩, 순서대로 상담실을 찾아갑니다. 
+상담은 상담 선생님이 계실 때에만 상담을 받을 수 있습니다. 
+또한 한번 상담실을 방문한 학생은 다시 상담실에 찾아가지 않습니다. 
+선생님의 일정표가 주어질 때, 누가 상담을 받지 못했는지 알고 싶습니다.
+일정표에는 선생님이 있는 날엔 "O"가, 없는 날엔 "X"가 표시됩니다.
+
+        </p>
+        <p></p>
+        <h2>입력</h2> 
+        <p>    
+선생님 일정표 자리에 있으면 O 없으면 X 가 표시 <br><br>
+O X X O O O X O X X
+        </p>
+        <p></p>
+        <h2>출력</h2> 
+        <p>    
+1일, 4일, 5일, 6일, 8일에만 선생님이 상담실에 있으므로 2번, 3번, 7번, 9번, 10번 학생은 상담을 받지 못합니다.<br><br>
+2 3 7 9 10<br>
+        </p>
+        <p></p>
+        <h2>풀이</h2> 
+        <p>
+        <pre>
+A = list(input().split())
+B = []
+for i in range(n):
+    if A[i] == 'O':
+        continue
+    elif A[i] == 'X':
+        B.append(i+1)
+
+print(B)
+
+        </pre>
+        </p>
+        <p></p>
+        <a href="m2.html">목록으로 돌아가기</a>
+    </div>
+</body>
+</html>
