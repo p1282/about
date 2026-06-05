@@ -49,38 +49,38 @@
         <h2>풀이</h2> 
         <p>
         <pre>
-n = int(input())
-def fun(a,b,c):
-    cnt = 0
-    bad = 0
-    if a >=80:
-        cnt += 1
-    elif a <= 40:
-        bad += 1
-    if b >=88:
-        cnt += 1
-    elif b <= 44:
-        bad += 1
-    if c >=70:
-        cnt += 1
-    elif c <= 35:
-        bad += 1
-    if cnt <= 1:
+
+            
+def passcnt(a, b, c):
+    x = 0 
+    if a >= 80:
+        x += 1
+    if b >= 88:
+        x += 1
+    if c >= 70:
+        x += 1
+
+    return x
+
+def midal(a,b,c):
+    if a <= 40 or b <= 44 or c <= 35:
         return False
     else:
-        if bad == 0:
-            return False
-        else:
-            return True
-        
+        return True        
+
+
+n = int(input())
 
 ans = 0
 for i in range(n):
     a,b,c = map(int,input().split())
-    r = fun(a,b,c)
-    if r == True:
-        ans += 1
-
+    x = passcnt(a,b,c)
+    y = midal(a,b,c)
+    
+    if x <= 1 or y == False:
+        pass
+    else:
+        ans = ans + 1
 print(ans)
 
         </pre>
