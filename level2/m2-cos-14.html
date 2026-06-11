@@ -50,7 +50,44 @@
         <p>
         <pre>
 
-            
+n = int(input())
+
+def passcnt(a,b,c):
+    x = 0
+
+    if a >= 80:
+        x += 1
+    if b >= 88:
+        x += 1
+    if c >= 70:
+        x += 1
+
+    return x
+
+def midalcnt(a,b,c):
+    y = 0
+    if a <= 40:
+        y += 1
+    if b <= 44:
+        y += 1
+    if c <= 35:
+        y += 1
+    return y
+
+ans = 0
+for i in range(n):
+    a,b,c = map(int,input().split())
+    x = passcnt(a,b,c)
+    y = midalcnt(a,b,c)
+    
+    if x <= 1 or y > 0:
+        pass
+    else:
+        ans = ans + 1
+
+print(ans)
+
+----------------        
 def passcnt(a, b, c):
     x = 0 
     if a >= 80:
