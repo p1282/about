@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // 💡 아이디와 비밀번호 확인 (예시: 'user' / '1234')
-        if (username === 'user' && password === '1234') {
+        // 💡 아이디와 비밀번호 확인 (예시: 'user' / '1111')
+        if (username === 'user' && password === '1111') {
             alert('로그인 성공!');
             loginModal.style.display = 'none';
             // 메뉴 활성화
